@@ -14,4 +14,6 @@ public interface User1Dao {
      User1 findOne(User1 user1);
 
      void save(User1 user1);
+
+     List<User1> findAllAndOrders();
 }

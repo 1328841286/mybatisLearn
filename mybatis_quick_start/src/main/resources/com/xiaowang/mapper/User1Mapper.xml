@@ -7,6 +7,28 @@
         from user1
     </select>
 
+    <resultMap id="user1Map" type="com.xiaowang.domain.User1">
+        <id column="uid" property="id"></id>
+        <result column="username" property="username"></result>
+        <result column="password" property="password"></result>
+        <result column="birthday" property="birthday"></result>
+
+<!--        配置集合信息
+property 集合名称
+ofType 集合类型
+-->
+        <collection property="orders" ofType="com.xiaowang.domain.Order">
+            <id column="oid" property="id"></id>
+            <result column="order_time" property="orderTime"></result>
+            <result column="total" property="total"></result>
+
+        </collection>
+
+    </resultMap>
+    <select id="findAllAndOrders" resultMap="user1Map">
+select * ,o.id oid from user u,orders o where u.id = o.uid
+    </select>
+
     <select id="findOne" resultType="com.xiaowang.domain.User1" parameterType="com.xiaowang.domain.User1">
         select * from user where 1=1
         <if test="id!=0">

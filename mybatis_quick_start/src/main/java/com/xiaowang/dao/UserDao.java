@@ -11,4 +11,6 @@ public interface UserDao {
      User findById(int id);
 
      User findOne(User user);
+
+     List<User> findByIds(List<Integer> ids);
 }

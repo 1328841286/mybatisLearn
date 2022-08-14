@@ -6,9 +6,11 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -36,5 +38,14 @@ public class MyTest1 {
         user.setUsername("999");
         User one = mapper.findOne(user);
         System.out.println("findOne:"+one);
+
+        System.out.println("--------------------");
+        List<Integer> list = new ArrayList<>();
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        List<User> byIds = mapper.findByIds(list);
+        System.out.println(byIds);
+        System.out.println("-----------------------------------");
     }
 }

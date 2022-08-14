@@ -32,5 +32,6 @@
     <mappers>
         <mapper  resource="com/xiaowang/mapper/UserMapper.xml"></mapper>
         <mapper  resource="com/xiaowang/mapper/User1Mapper.xml"></mapper>
+        <mapper  resource="com/xiaowang/mapper/OrderMapper.xml"></mapper>
     </mappers>
 </configuration>

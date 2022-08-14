@@ -25,6 +25,21 @@ public class DateHandle extends BaseTypeHandler<Date> {
         preparedStatement.setLong(i,time);
     }
 
+    @Override
+    public Date getNullableResult(ResultSet resultSet, String s) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public Date getNullableResult(ResultSet resultSet, int i) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public Date getNullableResult(CallableStatement callableStatement, int i) throws SQLException {
+        return null;
+    }
+
     /**
      * 后面三个方法讲数据库类型转换成java类型
      * @param resultSet  查询出的结果集
@@ -32,27 +47,27 @@ public class DateHandle extends BaseTypeHandler<Date> {
      * @return
      * @throws SQLException
      */
-    @Override
-    public Date getNullableResult(ResultSet resultSet, String s) throws SQLException {
-//        将结果集中需要的数据转换成date类型并返回
-        long aLong = resultSet.getLong(s);
-        Date date = new Date(aLong);
-        return date;
-    }
-
-    @Override
-    public Date getNullableResult(ResultSet resultSet, int i) throws SQLException {
-        //        将结果集中需要的数据转换成date类型并返回
-        long aLong = resultSet.getLong(i);
-        Date date = new Date(aLong);
-        return date;
-    }
-
-    @Override
-    public Date getNullableResult(CallableStatement callableStatement, int i) throws SQLException {
-        //        将结果集中需要的数据转换成date类型并返回
-        long aLong = callableStatement.getLong(i);
-        Date date = new Date(aLong);
-        return date;
-    }
+//    @Override
+//    public Date getNullableResult(ResultSet resultSet, String s) throws SQLException {
+////        将结果集中需要的数据转换成date类型并返回
+//        long aLong = resultSet.getLong(s);
+//        Date date = new Date(aLong);
+//        return date;
+//    }
+//
+//    @Override
+//    public Date getNullableResult(ResultSet resultSet, int i) throws SQLException {
+//        //        将结果集中需要的数据转换成date类型并返回
+//        long aLong = resultSet.getLong(i);
+//        Date date = new Date(aLong);
+//        return date;
+//    }
+//
+//    @Override
+//    public Date getNullableResult(CallableStatement callableStatement, int i) throws SQLException {
+//        //        将结果集中需要的数据转换成date类型并返回
+//        long aLong = callableStatement.getLong(i);
+//        Date date = new Date(aLong);
+//        return date;
+//    }
 }
